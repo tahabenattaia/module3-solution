@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="NarrowItDownApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Search</title>
+</head>
+<style>
+   
+
+    h1 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .found-items ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .found-items li {
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        margin: 10px 0;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+<body>
+    <div ng-controller="NarrowItDownController as narrowCtrl">
+        <h1>Menu Search</h1>
+        <input type="text" ng-model="narrowCtrl.searchTerm" placeholder="Search term">
+        <button ng-click="narrowCtrl.narrowItDown()">Narrow It Down For Me!</button>
+        <found-items items="narrowCtrl.found" on-remove="narrowCtrl.removeItem"></found-items>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+    <script src="service.js"></script>
+</body>
+</html>

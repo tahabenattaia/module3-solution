@@ -1,0 +1,8 @@
+<div class="found-items">
+    <ul>
+        <li ng-repeat="item in narrowCtrl.found">
+            {{ item.name }} - {{ item.description }}
+            <button ng-click="narrowCtrl.removeItem($index)">Don't want this one!</button>
+        </li>
+    </ul>
+</div>
